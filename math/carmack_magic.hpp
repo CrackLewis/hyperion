@@ -12,13 +12,14 @@
  */
 class CarmackMagic {
  public:
-  constexpr float Q_rsqrt(float number) noexcept {
-    static_assert(
-        std::numeric_limits<float>::is_iec559);  // (enable only on IEEE 754)
-
-    float const y = std::bit_cast<float>(
-        0x5f3759df - (std::bit_cast<std::uint32_t>(number) >> 1));
-    return y * (1.5f - (number * 0.5f * y * y));
+  float Q_rsqrt(float number) {
+    union {
+      float f;
+      uint32_t i;
+    } conv = {.f = number};
+    conv.i = 0x5f3759df - (conv.i >> 1);
+    conv.f *= 1.5F - (number * 0.5F * conv.f * conv.f);
+    return conv.f;
   }
 };
 
