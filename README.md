@@ -1,3 +1,3 @@
 # Hyperion
 
-a slow descent into madness of a coding enthusiast.
+*a slow descent of a coding enthusiast into madness.*
