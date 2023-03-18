@@ -1,3 +1,15 @@
+/**
+ * @file test_cxxstd_thread.cpp
+ * @author CrackLewis (ghxx040406@163.com)
+ * @brief
+ * @version 0.1
+ * @date 2023-03-18
+ *
+ * @copyright Copyright (c) 2023
+ *
+ * This file involves testing the member functions of std::thread.
+ */
+
 #include <chrono>
 #include <functional>
 #include <iostream>
